@@ -4,16 +4,17 @@ def run(noun, verb):
   inp = input_list[:]
   inp[1], inp[2], pointer = noun, verb, 0
   while pointer < len(inp):
+    v1,v2,target=inp[pointer+1:pointer+4]
     if inp[pointer] == 1:
-      inp[inp[pointer+3]] = inp[inp[pointer+1]]+inp[inp[pointer+2]]
-      pointer+=4
+      inp[target] = inp[v1]+inp[v2]
     elif inp[pointer] == 2:
-      inp[inp[pointer+3]] = inp[inp[pointer+1]]*inp[inp[pointer+2]]
-      pointer+=4
+      inp[target] = inp[v1]*inp[v2]
     elif inp[pointer] == 99:
       return inp[0]
     else:
       return -1
+    pointer+=4
+    
 
 print("Part 1: "+str(run(12,2)))
 
