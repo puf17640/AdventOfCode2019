@@ -1,0 +1,1 @@
+input =  [line.rstrip() for line in open("day22/input.txt").readlines()]

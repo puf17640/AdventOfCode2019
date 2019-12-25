@@ -10,6 +10,6 @@ def accumulate(y):
     y = int(math.floor(y/3)-2)
     if y < 0: 
       return x
-    x = x+y 
+    x = x+y
 
 print("Part 2: "+str(int(functools.reduce(lambda x,y: x+y, [i+accumulate(i) for i in input]))))
